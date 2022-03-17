@@ -44,6 +44,7 @@ export default {
   },
   mounted() {
     this.getQuote();
+    document.title = 'DevChallenges | Quotes Generator';
   },
   methods: {
     async getQuote() {
