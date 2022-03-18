@@ -41,6 +41,7 @@
       ]"
     >
       <QuoteCard :quotesData="quotes" :languageData="language" @setAuthor="setAuthor" />
+      <div v-if="quotes.length < 1" class="text-[14px] text-gray-600">Loading...</div>
     </div>
     <div></div>
   </div>
