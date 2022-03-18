@@ -2,10 +2,13 @@
   <div>
     <div v-for="(item, i) in quotesData" :key="i" class="py-8">
       <div
-        class="flex flex-col items-center justify-center w-96 border-l-4 border-orange-200 px-10"
+        class="flex flex-col items-center justify-center w-96 border-l-4 border-orange-200 px-8"
       >
-        <div>
+        <div v-if="languageData === 'en'">
           {{ `"${item.quote}"` }}
+        </div>
+        <div v-if="languageData === 'es'">
+          {{ `"${item.translatedQuote}"` }}
         </div>
       </div>
       <div
@@ -38,6 +41,12 @@ export default {
       type: Array,
       default() {
         return [];
+      },
+    },
+    languageData: {
+      type: String,
+      default() {
+        return 'en';
       },
     },
   },
